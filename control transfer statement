@@ -1,0 +1,55 @@
+for number in 1...10 {
+    if number == 5 {
+        break // Exit the loop when number is 5
+    }
+    print(number)
+}
+
+for number in 1...10 {
+    if number % 2 == 0 {
+        continue // Skip even numbers
+    }
+    print(number)
+}
+
+let number = 2
+
+switch number {
+case 1:
+    print("Number is 1")
+    fallthrough // Not typically used, but demonstrates the concept
+case 2:
+    print("Number is 2")
+    fallthrough
+case 3:
+    print("Number is 3")
+default:
+    print("Number is something else")
+}
+
+func add(a: Int, b: Int) -> Int {
+    return a + b
+}
+
+let sum = add(a: 5, b: 3)
+print(sum) // Output: 8
+
+
+enum MyError: Error {
+    case invalidInput
+}
+
+func process(value: Int) throws {
+    if value < 0 {
+        throw MyError.invalidInput
+    }
+    print("Processing \(value)")
+}
+
+do {
+    try process(value: -1)
+} catch MyError.invalidInput {
+    print("Invalid input provided")
+} catch {
+    print("An unexpected error occurred")
+}
