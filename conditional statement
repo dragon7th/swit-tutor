@@ -1,0 +1,78 @@
+Conditional Statements:
+
+if: Executes a block of code if a condition is true.
+else: Executes a block of code if the if condition is false.
+else if: Allows you to check multiple conditions in sequence.
+switch: Executes one of several possible code blocks based on the value of a variable or expression.
+Looping Statements:
+
+for-in: Iterates over a sequence (e.g., an array, range, string, dictionary) and executes a block of code for each element.
+while: Executes a block of code repeatedly as long as a condition is true. The condition is checked before each execution.
+repeat-while: Similar to while, but the condition is checked after each execution, guaranteeing that the block of code is executed at least once.
+Control Transfer Statements:
+
+break: Terminates the execution of a loop or switch statement.
+continue: Skips the rest of the current iteration of a loop and starts the next iteration.
+fallthrough: (Used in switch statements) Causes execution to continue to the next case in the switch statement, even if the case's value doesn't match. (Note: this is different from the behavior in C/C++/Java, where break is required at the end of each case).
+return: Exits a function and returns a value (if the function has a return type).
+throw: Used for error handling; throws an error that can be caught and handled by a catch block.
+
+1. Conditional Statements
+
+let temperature = 20
+
+if temperature > 25 {
+    print("It's a hot day!")
+}
+
+let temperature = 15
+
+if temperature > 25 {
+    print("It's a hot day!")
+} else {
+    print("It's not too hot today.")
+}
+
+let temperature = 10
+
+if temperature > 25 {
+    print("It's a hot day!")
+} else if temperature > 15 {
+    print("It's a pleasant day.")
+} else {
+    print("It's a bit chilly.")
+}
+
+let dayOfWeek = "Tuesday"
+
+switch dayOfWeek {
+case "Monday":
+    print("It's the start of the work week.")
+case "Tuesday":
+    print("It's Tuesday.")
+case "Wednesday":
+    print("It's Hump Day!")
+case "Thursday":
+    print("Almost Friday!")
+case "Friday":
+    print("TGIF!")
+default:
+    print("It's the weekend!")
+}
+
+let score = 85
+
+switch score {
+case 0..<60:
+    print("Fail")
+case 60..<70:
+    print("Pass")
+case 70..<80:
+    print("Good")
+case 80..<90:
+    print("Very Good")
+case 90...100: // Note the ... for closed range (inclusive)
+    print("Excellent")
+default:
+    print("Invalid score")
+}
