@@ -76,3 +76,21 @@ case 90...100: // Note the ... for closed range (inclusive)
 default:
     print("Invalid score")
 }
+
+let showFahrenheit = true
+let temperatureInCelsius = 30
+
+let temperature = showFahrenheit ? temperatureInCelsius * 9 / 5 + 32 : temperatureInCelsius
+print(temperature)
+// Prints 86
+
+// same as
+
+let showFahrenheit = true
+let temperatureInCelsius = 30
+
+let temperature = if showFahrenheit {
+    temperatureInCelsius * 9 / 5 + 32
+} else {
+    temperatureInCelsius
+}
