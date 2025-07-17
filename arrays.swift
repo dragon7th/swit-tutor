@@ -21,3 +21,11 @@ print(colors.count)
 
 //You can check whether an array contains a particular item by using contains(), like this:
 print(colors.contains("Octarine"))
+
+// Converting an Array to a String and Back
+let evenInts = ["2", "4", "6", "8", "10", "12"]
+let evenIntsString = evenInts.joined(separator: ", ")
+// returns "2, 4, 6, 8, 10, 12"
+let evenIntsString = "2, 4, 6, 8, 10, 12"
+let evenInts = evenIntsString.split(separator: ", ")
+// returns ["2", "4", "6", "8", "10", "12"]
