@@ -1,3 +1,4 @@
+/* 
 Conditional Statements:
 
 if: Executes a block of code if a condition is true.
@@ -16,6 +17,7 @@ continue: Skips the rest of the current iteration of a loop and starts the next 
 fallthrough: (Used in switch statements) Causes execution to continue to the next case in the switch statement, even if the case's value doesn't match. (Note: this is different from the behavior in C/C++/Java, where break is required at the end of each case).
 return: Exits a function and returns a value (if the function has a return type).
 throw: Used for error handling; throws an error that can be caught and handled by a catch block.
+*/
 
 1. Conditional Statements
 
