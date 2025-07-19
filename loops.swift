@@ -1,4 +1,5 @@
-//Swift’s for loops run some code for every item in a collection, or in a custom range. For example:
+//Swift’s for loops run some code for every item in a collection, 
+or in a custom range. For example:
 let platforms = ["iOS", "macOS", "tvOS", "watchOS"]
 
 for os in platforms {
@@ -10,7 +11,8 @@ for i in 1...12 {
     print("5 x \(i) is \(5 * i)")
 }
 
-//1...12 contains the values 1 through 12 inclusive. If you want to exclude the final number, use ..< instead:
+//1...12 contains the values 1 through 12 inclusive. If you want to 
+exclude the final number, use ..< instead:
 for i in 1..<13 {
     print("5 x \(i) is \(5 * i)")
 }
@@ -24,7 +26,8 @@ for _ in 1...5 {
 
 print(lyric)
 
-//There are also while loops, which execute their loop body until a condition is false, like this:
+//There are also while loops, which execute their loop body 
+until a condition is false, like this:
 var count = 10
 
 while count > 0 {
@@ -34,7 +37,8 @@ while count > 0 {
 
 print("Go!")
 
-//You can use continue to skip the current loop iteration and proceed to the following one:
+//You can use continue to skip the current loop iteration 
+and proceed to the following one:
 let files = ["me.jpg", "work.txt", "sophie.jpg"]
 
 for file in files {
