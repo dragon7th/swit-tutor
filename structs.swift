@@ -13,14 +13,17 @@ let red = Album(title: "Red", artist: "Taylor Swift")
 print(red.title)
 red.printSummary()
 
-//When we create instances of structs we do so using an initializer – Swift lets us treat our struct like a function, passing in parameters for each of its properties. It silently generates this memberwise initializer based on the struct’s properties.
+//When we create instances of structs we do so using an initializer – Swift lets us treat our struct 
+//like a function, passing in parameters for each of its properties. It silently generates this 
+//memberwise initializer based on the struct’s properties.
 
 //If you want to have a struct’s method change one of its properties, mark it as mutating:
 mutating func removeFromSale() {
     isReleased = false
 }
 
-//A computed property calculates its value every time it’s accessed. For example, we could write an Employee struct that tracks how many days of vacation remained for that employee:
+//A computed property calculates its value every time it’s accessed. For example, we could write 
+//an Employee struct that tracks how many days of vacation remained for that employee:
 struct Employee {
     let name: String
     var vacationAllocated = 14
@@ -44,7 +47,9 @@ var vacationRemaining: Int {
 
 //newValue is provided by Swift, and stores whatever value the user was assigning to the property.
 
-//Property observers are pieces of code that run when properties change: didSet runs when the property just changed, and willSet runs before the property changed.
+//Property observers are pieces of code that run when properties change: 
+//didSet runs when the property just changed,
+//and willSet runs before the property changed.
 
 //We could demonstrate didSet by making a Game struct print a message when the score changes:
 struct Game {
@@ -59,7 +64,8 @@ var game = Game()
 game.score += 10
 game.score -= 3
 
-//Initializers are special functions that prepare a new struct instance to be used, ensuring all properties have an initial value.
+//Initializers are special functions that prepare a new struct instance to be used, 
+//ensuring all properties have an initial value.
 
 //Swift generates one based on the struct’s properties, but you can create your own:
 struct Player {
@@ -74,11 +80,11 @@ struct Player {
 
 //Important: Initializers don’t have func before them, and don’t explicitly return a value.
 
-//Swift has several options for access control inside structs, but four are the most common:
-/* Use private for “don’t let anything outside the struct use this.”
-Use private(set) for “anything outside the struct can read this, but don’t let them change it.”
-Use fileprivate for “don’t let anything outside the current file use this.”
-Use public for “let anyone, anywhere use this.” */
+// Swift has several options for access control inside structs, but four are the most common:
+// Use private for “don’t let anything outside the struct use this.”
+// Use private(set) for “anything outside the struct can read this, but don’t let them change it.”
+// Use fileprivate for “don’t let anything outside the current file use this.”
+// Use public for “let anyone, anywhere use this.” 
 
 struct BankAccount {
     private(set) var funds = 0
@@ -99,13 +105,61 @@ struct BankAccount {
 
 //Because we used private(set), reading funds from outside the struct is fine but writing isn’t possible.
 
-//Swift supports static properties and methods, allowing you to add a property or method directly to the struct itself rather than to one instance of the struct:
+//Swift supports static properties and methods, allowing you to add a property or method directly to the 
+//struct itself rather than to one instance of the struct:
 struct AppData {
     static let version = "1.3 beta 2"
     static let settings = "settings.json"
 }
 
-//Using this approach, everywhere we need to check or display something like the app’s version number we can read AppData.version.
+//Using this approach, everywhere we need to check or display something like the app’s version number 
+//we can read AppData.version.
+
+// another struct example from Goose
+struct Point {
+    var x: Double
+    var y: Double
+
+    // Method to calculate the distance to another point
+    func distance(to other: Point) -> Double {
+        let xDistance = x - other.x
+        let yDistance = y - other.y
+        return sqrt(xDistance * xDistance + yDistance * yDistance)
+    }
+}
+
+// Creating instances of the Point struct
+var myPoint = Point(x: 10.0, y: 20.0)
+let origin = Point(x: 0.0, y: 0.0)
+
+// Calling the distance method
+let distanceToOrigin = myPoint.distance(to: origin)
+print("Distance from myPoint to origin: \(distanceToOrigin)") 
+// Prints: Distance from myPoint to origin: 22.3606797749979
+
+// another example
+struct Rectangle {
+    var width: Double
+    var height: Double
+
+    // Custom initializer
+    init(side: Double) {
+        self.width = side
+        self.height = side
+    }
+
+    init(width: Double, height: Double) {
+        self.width = width
+        self.height = height
+    }
+
+    func area() -> Double {
+        return width * height
+    }
+}
+
+let square = Rectangle(side: 10.0) // Calls init(side:)
+let rect = Rectangle(width: 5.0, height: 8.0) // calls init(width: height:)
 
 
 
