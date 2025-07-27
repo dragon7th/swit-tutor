@@ -1,4 +1,5 @@
-//An enum is a set of named values we can create and use to make our code more efficient and safer. For example, we could make an enum of weekdays like this:
+//An enum is a set of named values we can create and use to make our 
+//code more efficient and safer. For example, we could make an enum of weekdays like this:
 enum Weekday {
     case monday, tuesday, wednesday, thursday, friday
 }
